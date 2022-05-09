@@ -2,10 +2,12 @@ package com.sha.springbootmicroservice1course.service;
 
 import com.sha.springbootmicroservice1course.model.Course;
 import com.sha.springbootmicroservice1course.repository.CourseRepository;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Service
 public class CourseServiceImpl implements CourseService{
     private final CourseRepository courseRepository;
 

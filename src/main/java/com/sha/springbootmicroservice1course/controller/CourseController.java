@@ -30,6 +30,7 @@ public class CourseController {
 
     @GetMapping//api/course
     public ResponseEntity<?> getAllCourses(){
+
         return ResponseEntity.ok(courseService.findAllCourses());
     }
 }
