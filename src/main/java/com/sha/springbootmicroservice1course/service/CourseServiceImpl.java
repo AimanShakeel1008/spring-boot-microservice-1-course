@@ -24,12 +24,17 @@ public class CourseServiceImpl implements CourseService{
     }
 
     @Override
-    public void deleteCourse(long courseId){
+    public void deleteCourse(Long courseId){
         courseRepository.deleteById(courseId);
     }
 
     @Override
     public List<Course> findAllCourse(){
         return courseRepository.findAll();
+    }
+
+    @Override
+    public Course findCourseById(Long courseId){
+        return courseRepository.findById(courseId).get();
     }
 }

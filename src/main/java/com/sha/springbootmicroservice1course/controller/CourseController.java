@@ -21,9 +21,9 @@ public class CourseController {
     }
 
     @DeleteMapping("{courseId}") //api/course/{courseId}
-    public ResponseEntity<?>  deleteCourse(@PathVariable Long id){
+    public ResponseEntity<?>  deleteCourse(@PathVariable Long courseId){
 
-        courseService.deleteCourse(id);
+        courseService.deleteCourse(courseId);
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
@@ -31,5 +31,10 @@ public class CourseController {
     @GetMapping //api/course
     public ResponseEntity<?> getAllCourses(){
         return ResponseEntity.ok(courseService.findAllCourse());
+    }
+
+    @GetMapping("{courseId}")
+    public ResponseEntity<?> getCourseById(@PathVariable Long courseId){
+        return ResponseEntity.ok(courseService.findCourseById(courseId));
     }
 }

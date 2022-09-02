@@ -7,7 +7,9 @@ import java.util.List;
 public interface CourseService {
     Course saveCourse(Course course);
 
-    void deleteCourse(long courseId);
+    void deleteCourse(Long courseId);
 
     List<Course> findAllCourse();
+
+    Course findCourseById(Long courseId);
 }
